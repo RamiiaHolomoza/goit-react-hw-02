@@ -1,6 +1,6 @@
 import s from "./Options.module.css";
 
-const Options = ({ onLeaveFeedback }) => {
+const Options = ({ onLeaveFeedback, onReset, totalFeedback }) => {
   return (
     <div className={s.option}>
       <button onClick={() => onLeaveFeedback("good")} className={s.btn}>
@@ -12,7 +12,11 @@ const Options = ({ onLeaveFeedback }) => {
       <button onClick={() => onLeaveFeedback("bad")} className={s.btn}>
         Bad
       </button>
-      {/* {totalFeedback > 0 } */}
+      {totalFeedback > 0 && (
+        <button onClick={onReset} className={s.btn}>
+          Reset
+        </button>
+      )}
     </div>
   );
 };

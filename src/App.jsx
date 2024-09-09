@@ -17,14 +17,29 @@ const App = () => {
       [type]: prevFeedback[type] + 1,
     }));
   };
-
+  const resetFeedback = () => {
+    setFeedback({ good: 0, neutral: 0, bad: 0 });
+  };
   const totalFeedback = feedback.good + feedback.neutral + feedback.bad;
+  const positivFeedback = Math.round((feedback.good / totalFeedback) * 100);
 
   return (
     <>
       <Description />
-      <Options onLeaveFeedback={updateFeedback} />
-      {totalFeedback > 0 ? <Feedback feedback={feedback} /> : <Notification />}
+      <Options
+        onLeaveFeedback={updateFeedback}
+        onReset={resetFeedback}
+        totalFeedback={totalFeedback}
+      />
+      {totalFeedback > 0 ? (
+        <Feedback
+          feedback={feedback}
+          totalFeedback={totalFeedback}
+          positivFeedback={positivFeedback}
+        />
+      ) : (
+        <Notification />
+      )}
     </>
   );
 };

@@ -28,6 +28,12 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    cornflowerblue,
+    white
+  ); /* Зліва направо */
+  height: 100vh;
 }
 
 h1 {
@@ -65,4 +71,14 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+#root {
+  width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 30px;
+  color: #000;
 }

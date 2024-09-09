@@ -1,0 +1,10 @@
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: sans-serif;
+}
+.title {
+  font-size: 60px;
+  color: burlywood;
+}

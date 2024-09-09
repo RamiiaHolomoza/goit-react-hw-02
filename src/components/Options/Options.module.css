@@ -1,0 +1,13 @@
+.option {
+  display: flex;
+  gap: 20px;
+}
+.btn {
+  width: 200px;
+  background-color: burlywood;
+  &:hover,
+  &:focus {
+    background-color: chocolate;
+    border: none;
+  }
+}
